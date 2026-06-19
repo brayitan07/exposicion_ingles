@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dev Roadmap</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #000;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    .page {
+      background: #0a0a0a;
+      border: 1px solid #1a1a1a;
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .top-tag {
+      display: inline-block;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      color: #666;
+      font-size: 11px;
+      letter-spacing: .12em;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      font-size: 36px;
+      font-weight: 500;
+      color: #f0f0f0;
+      line-height: 1.1;
+      margin-bottom: .4rem;
+    }
+
+    .hero-title span { color: #7F77DD; }
+
+    .hero-sub {
+      font-size: 13px;
+      color: #444;
+      margin-bottom: 2.5rem;
+      letter-spacing: .06em;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .section-number {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+
+    .n1 { background: #1a1a3a; color: #7F77DD; border: 1px solid #3C3489; }
+    .n2 { background: #0a2a1a; color: #1D9E75; border: 1px solid #0F6E56; }
+    .n3 { background: #2a0a1a; color: #D4537E; border: 1px solid #993556; }
+
+    .section-title-text {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .c-purple { color: #7F77DD; }
+    .c-teal   { color: #1D9E75; }
+    .c-pink   { color: #D4537E; }
+
+    .section-desc {
+      font-size: 11px;
+      color: #3a3a3a;
+      letter-spacing: .05em;
+    }
+
+    .card {
+      background: #111;
+      border: 1px solid #1f1f1f;
+      border-radius: 14px;
+      padding: 1rem 1.1rem;
+      margin-bottom: .75rem;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      font-size: 10px;
+      letter-spacing: .08em;
+      padding: 3px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      margin-top: 2px;
+      white-space: nowrap;
+    }
+
+    .chip-purple { background: #1a1a3a; color: #7F77DD; border: 1px solid #3C3489; }
+    .chip-teal   { background: #0a2a1a; color: #1D9E75; border: 1px solid #0F6E56; }
+    .chip-pink   { background: #2a0a1a; color: #D4537E; border: 1px solid #993556; }
+
+    .card-sentence {
+      font-size: 14px;
+      color: #c8c8c8;
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    .hl-purple { color: #AFA9EC; font-weight: 500; }
+    .hl-teal   { color: #5DCAA5; font-weight: 500; }
+    .hl-pink   { color: #ED93B1; font-weight: 500; }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .tech-tag {
+      font-size: 10px;
+      color: #555;
+      background: #181818;
+      border: 1px solid #252525;
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-family: 'Courier New', monospace;
+    }
+
+    .struct-pill {
+      font-size: 10px;
+      color: #3a3a3a;
+      border: 1px solid #1f1f1f;
+      border-radius: 20px;
+      padding: 2px 10px;
+      font-family: 'Courier New', monospace;
+      margin-left: auto;
+    }
+
+    .divider {
+      height: 1px;
+      background: #161616;
+      margin: 1.75rem 0;
+    }
+
+    .bottom-bar {
+      background: #111;
+      border: 1px solid #1f1f1f;
+      border-radius: 14px;
+      padding: 1rem 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: .5rem;
+    }
+
+    .bottom-icon {
+      width: 40px;
+      height: 40px;
+      background: #1a1a3a;
+      border: 1px solid #3C3489;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7F77DD;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .bottom-text {
+      font-size: 12px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .bottom-text b { color: #666; font-weight: 500; }
+
+    @media (max-width: 480px) {
+      .hero-title { font-size: 28px; }
+      .card-top { flex-direction: column; gap: 6px; }
+      .struct-pill { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="top-tag">Software dev &middot; English future structures &middot; 3-3-3 rule</div>
+
+  <h1 class="hero-title">My dev<br><span>roadmap</span></h1>
+  <p class="hero-sub">Sprint &middot; Milestones &middot; Predictions</p>
+
+  <!-- PART 1 -->
+  <div class="section-label">
+    <div class="section-number n1">01</div>
+    <div>
+      <div class="section-title-text c-purple">The immediate sprint</div>
+      <div class="section-desc">Present continuous &mdash; fixed arrangements</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="chip chip-purple">this friday</span>
+      <p class="card-sentence">
+        <span class="hl-purple">I am pushing</span> the final commit to our Django project repository before the sprint review.
+      </p>
+    </div>
+    <div class="card-footer">
+      <span class="tech-tag">Git</span>
+      <span class="tech-tag">Django</span>
+      <span class="struct-pill">I am + verb-ing</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="chip chip-purple">tomorrow</span>
+      <p class="card-sentence">
+        <span class="hl-purple">We are presenting</span> the database architecture using PostgreSQL to our instructor.
+      </p>
+    </div>
+    <div class="card-footer">
+      <span class="tech-tag">PostgreSQL</span>
+      <span class="tech-tag">SQL</span>
+      <span class="struct-pill">we are + verb-ing</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="chip chip-purple">monday</span>
+      <p class="card-sentence">
+        <span class="hl-purple">I am attending</span> a live coding session on REST API development with Django REST Framework.
+      </p>
+    </div>
+    <div class="card-footer">
+      <span class="tech-tag">REST API</span>
+      <span class="tech-tag">DRF</span>
+      <span class="struct-pill">I am + verb-ing</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PART 2 -->
+  <div class="section-label">
+    <div class="section-number n2">02</div>
+    <div>
+      <div class="section-title-text c-teal">The next milestones</div>
+      <div class="section-desc">Be going to &mdash; solid plans and intentions</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="chip chip-teal">next trimester</span>
+      <p class="card-sentence">
+        <span class="hl-teal">We are going to learn</span> advanced Python and backend frameworks like FastAPI.
+      </p>
+    </div>
+    <div class="card-footer">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">FastAPI</span>
+      <span class="struct-pill">going to + verb</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="chip chip-teal">after grad</span>
+      <p class="card-sentence">
+        <span class="hl-teal">I am going to build</span> a full-stack portfolio app and deploy it using Docker and AWS.
+      </p>
+    </div>
+    <div class="card-footer">
+      <span class="tech-tag">Docker</span>
+      <span class="tech-tag">AWS</span>
+      <span class="struct-pill">going to + verb</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="chip chip-teal">end of year</span>
+      <p class="card-sentence">
+        <span class="hl-teal">Our team is going to integrate</span> JWT authentication into our platform.
+      </p>
+    </div>
+    <div class="card-footer">
+      <span class="tech-tag">JWT</span>
+      <span class="tech-tag">Auth</span>
+      <span class="struct-pill">going to + verb</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PART 3 -->
+  <div class="section-label">
+    <div class="section-number n3">03</div>
+    <div>
+      <div class="section-title-text c-pink">Tech predictions</div>
+      <div class="section-desc">Will &mdash; probabilities and distant future</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="chip chip-pink">5 years</span>
+      <p class="card-sentence">
+        I <span class="hl-pink">will probably work</span> as a remote DevOps engineer managing cloud infrastructure on AWS or Azure.
+      </p>
+    </div>
+    <div class="card-footer">
+      <span class="tech-tag">DevOps</span>
+      <span class="tech-tag">Azure</span>
+      <span class="struct-pill">will + probably</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="chip chip-pink">future</span>
+      <p class="card-sentence">
+        I think AI tools <span class="hl-pink">will replace</span> repetitive coding tasks — devs <span class="hl-pink">will probably focus</span> more on architecture.
+      </p>
+    </div>
+    <div class="card-footer">
+      <span class="tech-tag">AI</span>
+      <span class="tech-tag">Automation</span>
+      <span class="struct-pill">I think + will</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="chip chip-pink">maybe</span>
+      <p class="card-sentence">
+        Maybe our class <span class="hl-pink">will launch</span> a real startup — we <span class="hl-pink">will probably use</span> the stack we are learning right now.
+      </p>
+    </div>
+    <div class="card-footer">
+      <span class="tech-tag">Startup</span>
+      <span class="tech-tag">Full stack</span>
+      <span class="struct-pill">maybe + will</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="bottom-bar">
+    <div class="bottom-icon">
+      <i class="ti ti-microphone"></i>
+    </div>
+    <p class="bottom-text">
+      <b>Pitch tip:</b> never drop "to be" &mdash;
+      say <b>"I am working"</b>, not "I working" &middot;
+      say <b>"we are going to build"</b>, not "we going to build"
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
